@@ -1,7 +1,16 @@
 # Výchozí stav před testováním poruch
 
-- Asterisk běží v Docker Desktopu na Windows.
-- Linka 6001 je přihlášená v PhonerLite, linka 6002 v MicroSIPu.
-- Hovor z 6001 na 6002 se spojil.
-- Zvuk 6001 → 6002: funguje, hlas z PhonerLite je slyšet v MicroSIPu.
-- Zvuk 6002 → 6001: funguje, hlas z MicroSIPu je slyšet v PhonerLite.
+Cílem bylo ověřit, že se obě testovací linky přihlásí k Asterisku
+a že mezi nimi lze navázat hovor.
+
+## Postup
+
+1. Přihlásil jsem linku `6001` v aplikaci PhonerLite.
+2. Přihlásil jsem linku `6002` v aplikaci MicroSIP.
+3. V PhonerLite jsem vytočil `6002` a v MicroSIPu hovor přijal.
+
+## Výsledek
+
+- Hovor z `6001` na `6002` se úspěšně spojil.
+- Zvuk z PhonerLite do MicroSIPu (`6001` → `6002`): zatím neověřeno.
+- Zvuk z MicroSIPu do PhonerLite (`6002` → `6001`): zatím neověřeno.
