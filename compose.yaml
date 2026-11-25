@@ -1,0 +1,12 @@
+name: voip-homer
+services:
+  asterisk:
+    build:
+      context: ./lab/asterisk
+    ports:
+      - "127.0.0.1:15060:15060/udp"
+      - "127.0.0.1:17000-17009:17000-17009/udp"
+    volumes:
+      - ./lab/asterisk/pjsip.conf:/etc/asterisk/pjsip.conf:ro
+      - ./lab/asterisk/extensions.conf:/etc/asterisk/extensions.conf:ro
+      - ./lab/asterisk/rtp.conf:/etc/asterisk/rtp.conf:ro
